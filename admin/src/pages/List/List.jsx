@@ -3,7 +3,7 @@ import './List.css';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const List = (url) => {
+const List = ({ url }) => {
   // const url = "http://localhost:4000";
   const [list, setList] = useState([]);
 
