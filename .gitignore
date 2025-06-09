@@ -1,0 +1,4 @@
+.env
+Backend/.env
+admin/.env
+Frontend/.env

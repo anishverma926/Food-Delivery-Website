@@ -1,0 +1,89 @@
+.place-order {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 100px;
+    gap: 50px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+.place-order-left,
+.place-order-right {
+    width: 100%;
+    flex: 1;
+}
+
+.place-order-left {
+    min-width: 300px;
+}
+
+.place-order-left .title {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.place-order-left input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #c5c5c5;
+    border-radius: 4px;
+    outline-color: tomato;
+}
+
+.place-order-left .multi-fields {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.place-order-left .multi-fields input {
+    flex: 1;
+    min-width: 100px;
+}
+
+.place-order-right {
+    max-width: 500px;
+}
+
+.place-order .cart-total button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 12px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Responsive: Tablet */
+@media (max-width: 1024px) {
+    .place-order {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .place-order-left,
+    .place-order-right {
+        max-width: 100%;
+    }
+}
+
+/* Responsive: Phone */
+@media (max-width: 600px) {
+    .place-order-left .multi-fields {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .place-order-left .multi-fields input {
+        width: 100%;
+    }
+
+    .place-order {
+        margin-top: 50px;
+        padding: 0 10px;
+    }
+}
