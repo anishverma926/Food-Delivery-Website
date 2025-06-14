@@ -2,12 +2,12 @@ import { createContext, useEffect, useState } from "react";
 // import { food_list } from "../assets/assets";
 import axios from "axios";
 
-export const StoreContext = createContext(null)
+export const StoreContext = createContext()
 
 const StoreContextProvider = (props) => {
 
     const [cartItems, setCartItems] = useState({});
-    const url = 'https://food-delivery-backend-s0m1.onrender.com'
+    const url = 'http://localhost:4000'
     const [token, setToken] = useState("");
 
     // Data carry from database now

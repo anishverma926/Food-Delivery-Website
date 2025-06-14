@@ -26,17 +26,9 @@ const loginUser = async(req,res)=>{
     }
 }
 
-// const createToken = (id) => {
-//     return jwt.sign({id},process.env.JWT_SECRET)
-// }
-
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: "3d",
-  });
-};
-
-
+    return jwt.sign({id},process.env.JWT_SECRET)
+}
 //register user
 const registerUser = async(req,res)=>{
     const {name,password,email} = req.body;
@@ -51,7 +43,7 @@ const registerUser = async(req,res)=>{
         if(!validator.isEmail(email)){
             return res.json({success:false,message:"Please enter a valid email"})
         }
-        if(password.length < 8){
+        if(password.length<8){
             return res.json({success:false,message:"Please enter a strong password"})
         }
 
@@ -67,14 +59,9 @@ const registerUser = async(req,res)=>{
         const token = createToken(user._id)
         res.json({success:true,token})
     }
-    // catch(error){
-    //     console.log(error);
-    //     res.json({success:false, message:"Error"})
-    // }
-    catch (error) {
-    console.error("Register Error:", error.message);
-    res.status(500).json({ success: false, message: error.message || "Server error" });
+    catch(error){
+        console.log(error);
+        res.json({success:false, message:"Error"})
     }
 }
-
 export  {registerUser,loginUser}
